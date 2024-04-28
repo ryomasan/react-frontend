@@ -38,6 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Create project and install v0
 Refered to https://v0.dev/docs
+
 ① Change node version >=20
 ```nvm use 21```
 
