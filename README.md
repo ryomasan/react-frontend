@@ -35,3 +35,14 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # react-frontend
+
+Create project and install v0
+Refered to https://v0.dev/docs
+① Change node version >=20
+```nvm use 21```
+
+② Create next.js project 
+```npx create-next-app@latest --typescript --tailwind --eslint```
+
+③ Initialization
+```npx v0@latest init```
