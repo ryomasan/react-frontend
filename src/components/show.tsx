@@ -17,7 +17,7 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
@@ -25,9 +25,9 @@ import {
   DropdownMenuItem,
   DropdownMenuContent,
   DropdownMenu,
-} from "@/components/ui/dropdown-menu";
-import { CardContent, Card } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
+} from "./ui/dropdown-menu";
+import { CardContent, Card } from "./ui/card";
+import { Textarea } from "./ui/textarea";
 import Link from "../../node_modules/next/link";
 
 export function Show() {

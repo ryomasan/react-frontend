@@ -18,11 +18,14 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 
-import { Button } from "@/components/ui/button";
-import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
-import Link from "../../node_modules/next/link";
+import { Button } from "../../components/ui/button";
+import {
+  AvatarImage,
+  AvatarFallback,
+  Avatar,
+} from "../../components/ui/avatar";
 
-export function Mypage() {
+const Mypage =()=> {
   return (
     <>
       <main className="flex-1 overflow-auto p-4">
@@ -50,7 +53,7 @@ export function Mypage() {
           </div>
         </div>
         <div className="container grid grid-cols-1 md:grid-cols-2">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 m-4 shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:border-gray-800">
+          <div className="col-span-2 rounded-lg border border-gray-200 bg-white p-6 m-4 shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:border-gray-800">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold">連携中ユーザー</h2>
             </div>
@@ -135,7 +138,7 @@ export function Mypage() {
                         Scan the QR code to link with a coach or player.
                       </div>
                     </div>
-                  </div>          
+                  </div>
                 </div>
               </div>
               <div className="rounded-lg border border-gray-200 bg-gray-100 p-4 dark:border-gray-800 dark:bg-gray-950 dark:border-gray-800">
@@ -189,7 +192,7 @@ export function Mypage() {
   );
 }
 
-function KeyIcon(props:any) {
+function KeyIcon(props: any) {
   return (
     <svg
       {...props}
@@ -230,7 +233,7 @@ function LinkIcon(props) {
   );
 }
 
-function QrCodeIcon(props:any) {
+function QrCodeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -260,7 +263,7 @@ function QrCodeIcon(props:any) {
   );
 }
 
-function TrashIcon(props:any) {
+function TrashIcon(props: any) {
   return (
     <svg
       {...props}
@@ -280,3 +283,5 @@ function TrashIcon(props:any) {
     </svg>
   );
 }
+
+export default Mypage;

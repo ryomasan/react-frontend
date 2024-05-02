@@ -33,7 +33,10 @@ export function EmailVerification() {
             </button>
           </div>
           <div className="flex items-center">
-            <Link className="text-blue-600 hover:underline ml-4 flex justify-end" href="#">
+            <Link
+              className="text-blue-600 hover:underline ml-4 flex justify-end"
+              href="#"
+            >
               ログインページへ戻る
             </Link>
           </div>

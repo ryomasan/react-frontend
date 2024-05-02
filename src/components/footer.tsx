@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export function Footer() {
     return (
-<footer className="flex h-16 items-center justify-between border-t bg-white px-4 dark:border-gray-800 dark:bg-gray-900">
+<footer className="flex h-16 absolute inset-x-0 bottom-0 items-center justify-between border-t bg-white px-4 dark:border-gray-800 dark:bg-gray-900">
   <Button className="rounded-full" size="icon" variant="ghost">
     <PlusIcon className="h-6 w-6 text-gray-500 dark:text-gray-400" />
     <span className="sr-only">Create new note</span>

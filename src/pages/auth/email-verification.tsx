@@ -6,7 +6,7 @@
 
 import Link from "../../../node_modules/next/link";
 
-export function EmailVerification() {
+const EmailVerification = ()=> {
   return (
     <div className="flex h-screen bg-[#f7f7f7] justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full m-4">
@@ -33,7 +33,10 @@ export function EmailVerification() {
             </button>
           </div>
           <div className="flex items-center">
-            <Link className="text-blue-600 hover:underline ml-4 flex justify-end" href="#">
+            <Link
+              className="text-blue-600 hover:underline ml-4 flex justify-end"
+              href="./login"
+            >
               ログインページへ戻る
             </Link>
           </div>
@@ -42,3 +45,5 @@ export function EmailVerification() {
     </div>
   );
 }
+
+export default EmailVerification;
