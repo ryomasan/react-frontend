@@ -17,7 +17,7 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
-import { Button } from "./ui/button";
+import { Button } from "../../components/ui/button";
 import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
@@ -25,15 +25,15 @@ import {
   DropdownMenuItem,
   DropdownMenuContent,
   DropdownMenu,
-} from "./ui/dropdown-menu";
-import { CardContent, Card } from "./ui/card";
-import { Textarea } from "./ui/textarea";
-import Link from "../../node_modules/next/link";
+} from "../../components/ui/dropdown-menu";
+import { CardContent, Card } from "../../components/ui/card";
+import { Textarea } from "../../components/ui/textarea";
+import Link from "../../../node_modules/next/link";
 
-export function Show() {
+const Show = () => {
   return (
     <>
-      <main className="flex-1 overflow-auto p-4">
+      <div className="flex-column p-6 h-full bg-[#f7f7f7] justify-center content-center overflow-y-scroll">
         <div className="grid gap-4">
           <div className="grid gap-2">
             <div className="flex items-center justify-between">
@@ -353,7 +353,7 @@ export function Show() {
             </Card>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }
@@ -376,3 +376,5 @@ function ChevronDownIcon(props: any) {
     </svg>
   );
 }
+
+export default  Show;

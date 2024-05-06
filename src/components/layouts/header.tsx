@@ -1,6 +1,8 @@
 "use client";
-import Link from "../../node_modules/next/link";
-import { Button } from "./ui/button";
+import { SyntheticEvent } from "react";
+import apiClient from "@/lib/apiClient";
+import Link from "../../../node_modules/next/link";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -8,9 +10,19 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "../ui/dropdown-menu";
+import { useRouter } from "../../../node_modules/next/router";
 
 export function Header() {
+  const router = useRouter();
+  const handleClick = async (path: any) => {
+    try {
+      await apiClient.post(path);
+      router.push("/login");
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
   return (
     <header className="flex h-16 items-center justify-between border-b bg-white px-4 dark:border-gray-800 dark:bg-gray-900">
       <div className="flex items-center gap-4">
@@ -43,9 +55,13 @@ export function Header() {
             <DropdownMenuLabel>Ryoma</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Link href="auth/mypage">マイページ</Link>
+              <Link href="/mypage/info">マイページ</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>ログアウト</DropdownMenuItem>
+            <DropdownMenuItem>              
+              <Link onClick={() => handleClick("/auth/logout")} href="/auth/login">          
+                ログアウト
+              </Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

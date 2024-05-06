@@ -6,6 +6,7 @@
 
 import React, { useState, SyntheticEvent } from "react";
 import apiClient from "../../lib/apiClient";
+import userType from "../../constants/userType";
 import { useRouter } from "../../../node_modules/next/router";
 
 const Register = () => {
@@ -13,17 +14,20 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
+  const [user_type, setUserType] = useState(userType.PLAYER);
   const router = useRouter();
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      apiClient.post("auth/register", {
+      const response = await apiClient.post("auth/register", {
         name,
         email,
         password,
         password_confirmation,
+        user_type,
       });
+      // レスポンスが正常に受信された場合の処理
       router.push("./login");
     } catch (error) {
       console.error("Error", error);
@@ -31,7 +35,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex h-screen bg-[#f7f7f7] justify-center items-center">
+    <div className="flex h-full bg-[#f7f7f7] justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full m-4">
         <h1 className="text-2xl font-bold mb-6">新規登録</h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -94,6 +98,42 @@ const Register = () => {
               value={password_confirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
+          </div>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center">
+              <input
+                className="h-6 w-6 text-blue-600 focus:ring-blue-500"
+                id="player"
+                name="user_type"
+                type="radio"
+                value={userType.PLAYER}
+                checked={user_type == userType.PLAYER}
+                onChange={() => setUserType(userType.PLAYER)}
+              />
+              <label
+                className="ml-2 block text-sm font-medium text-gray-700"
+                htmlFor="player"
+              >
+                選手
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                className="h-6 w-6 text-blue-600 focus:ring-blue-500"
+                id="coach"
+                name="user_type"
+                type="radio"
+                value={userType.COACH}
+                checked={user_type == userType.COACH}
+                onChange={() => setUserType(userType.COACH)}
+              />
+              <label
+                className="ml-2 block text-sm font-medium text-gray-700"
+                htmlFor="coach"
+              >
+                監督
+              </label>
+            </div>
           </div>
           <div>
             <button

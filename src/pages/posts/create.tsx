@@ -24,12 +24,12 @@ import {
   SelectGroup,
   SelectContent,
   Select,
-} from "./ui/select";
+} from "../../components/ui/select";
 
-export function Post() {
+const Create = () => {
   return (
     <>
-      <main className="flex-1 p-4">
+      <div className="flex-column p-6 h-full bg-[#f7f7f7] justify-center content-center">
         <h2 className="mb-4 text-lg font-bold text-gray-900 dark:text-gray-100">
           記録
         </h2>
@@ -107,7 +107,10 @@ export function Post() {
             登録
           </button>
         </div>
-      </main>
+      </div>
     </>
   );
-}
+};
+
+
+export default Create;

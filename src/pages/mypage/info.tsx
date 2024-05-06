@@ -24,11 +24,12 @@ import {
   AvatarFallback,
   Avatar,
 } from "../../components/ui/avatar";
+import Link from "../../../node_modules/next/link";
 
-const Mypage =()=> {
+const Info = () => {
   return (
     <>
-      <main className="flex-1 overflow-auto p-4">
+      <div className="flex-column p-6 h-full bg-[#f7f7f7] justify-center content-center overflow-y-scroll">
         <div className="col-span-2 rounded-lg border border-gray-200 bg-white p-6 m-4 shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:border-gray-800">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">User Information</h2>
@@ -155,7 +156,9 @@ const Mypage =()=> {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Button size="sm">再設定</Button>
+                    <Link href="/auth/reset-password" passHref>
+                      <Button size="sm">再設定</Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -187,10 +190,10 @@ const Mypage =()=> {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
-}
+};
 
 function KeyIcon(props: any) {
   return (
@@ -213,7 +216,7 @@ function KeyIcon(props: any) {
   );
 }
 
-function LinkIcon(props) {
+function LinkIcon(prop: any) {
   return (
     <svg
       {...props}
@@ -284,4 +287,4 @@ function TrashIcon(props: any) {
   );
 }
 
-export default Mypage;
+export default Info;

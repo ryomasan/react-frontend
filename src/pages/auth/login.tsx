@@ -5,31 +5,33 @@
  */
 
 import Link from "../../../node_modules/next/link";
-import React, { FormEvent, useState } from "react";
+import React, { useState, SyntheticEvent } from "react";
 import { useRouter } from "../../../node_modules/next/router";
-import apiClient from "@/lib/apiClient";
+import apiClient from "../../lib/apiClient";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
     try {
-      apiClient.post("/auth/login", {
+      await apiClient.post("/auth/login", {
         email,
         password,
-      });
-      router.push("/auth/mypage");
+      }).then(() => {
+        router.push("../posts/show");
+      })
     } catch (error) {
       console.error("Error", error);
     }
   };
 
   return (
-    <div className="flex h-screen bg-[#f7f7f7] justify-center items-center">
+    <div className="flex h-full bg-[#f7f7f7] justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full m-4">
         <h1 className="text-2xl font-bold mb-6">ログイン</h1>
         <form className="space-y-4" onSubmit={handleSubmit}>

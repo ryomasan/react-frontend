@@ -30,10 +30,10 @@ import {
   Pagination,
 } from "../../components/ui/pagination";
 
-const Index = () => {
+const Home = () => {
   return (
     <>
-      <main className="flex-1 overflow-auto p-4">
+      <div className="flex-column p-6 h-full bg-[#f7f7f7] justify-center content-center">
         <div className="grid gap-4">
           <div className="grid gap-2">
             <div className="flex items-center justify-between">
@@ -141,34 +141,6 @@ const Index = () => {
                   </p>
                 </CardContent>
               </Card>
-              {/* <Card>
-                <CardContent className="grid gap-2 p-6">
-                  <div className="flex items-center gap-2">
-                    <img
-                      alt="Note thumbnail"
-                      className="rounded-md"
-                      height="40"
-                      src="/placeholder.svg"
-                      style={{
-                        aspectRatio: "40/40",
-                        objectFit: "cover",
-                      }}
-                      width="40"
-                    />
-                    <div className="flex-1">
-                      <h3 className="text-sm font-medium">Research Proposal</h3>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">Created 10 days ago</p>
-                    </div>
-                    <Button size="icon" variant="ghost">
-                      <MoreVerticalIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                    </Button>
-                  </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-                    This is the research proposal for my final project, outlining the topic, methodology, and expected
-                    outcomes.
-                  </p>
-                </CardContent>
-              </Card> */}
             </div>
           </div>
         </div>
@@ -198,50 +170,10 @@ const Index = () => {
             </PaginationContent>
           </Pagination>
         </div>
-      </main>
+      </div>      
     </>
   );
 };
-
-// function FilterIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       xmlns="http://www.w3.org/2000/svg"
-//       width="24"
-//       height="24"
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       stroke="currentColor"
-//       strokeWidth="2"
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//     >
-//       <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-//     </svg>
-//   )
-// }
-
-function MenuIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  );
-}
 
 function MoreVerticalIcon(props) {
   return (
@@ -264,26 +196,6 @@ function MoreVerticalIcon(props) {
   );
 }
 
-// function PlusIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       xmlns="http://www.w3.org/2000/svg"
-//       width="24"
-//       height="24"
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       stroke="currentColor"
-//       strokeWidth="2"
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//     >
-//       <path d="M5 12h14" />
-//       <path d="M12 5v14" />
-//     </svg>
-//   )
-// }
-
 function SearchIcon(props: any) {
   return (
     <svg
@@ -304,5 +216,4 @@ function SearchIcon(props: any) {
   );
 }
 
-
-export default Index;
+export default Home;

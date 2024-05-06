@@ -5,7 +5,7 @@
  */
 const ResetPassword = () => {
   return (
-    <div className="flex h-screen bg-[#f7f7f7] justify-center items-center">
+    <div className="flex h-full bg-[#f7f7f7] justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full m-4">
         <h1 className="text-2xl font-bold mb-6">パスワード再設定</h1>
         <form className="space-y-4">
